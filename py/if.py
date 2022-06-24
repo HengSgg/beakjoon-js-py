@@ -1,6 +1,18 @@
-a = 48
-b = 4
-if a % b == 0:
-    print(f'{a}는 {b}로 나누어 떨어집니다.')
-elif a % b != 0:
-    print(f'{a}는 {b}로 나누어 떨어지지 않습니다.')
+activity, workout = input().split()
+
+
+if activity == 1:
+    actco = 1.2
+elif activity == 2: 
+    actco = 1.4
+elif activity == 3:
+    actco = 1.6
+    
+if workout == 1:
+    actco = actco + 0.1
+elif workout == 2:
+    actco = actco + 0.2    
+elif workout == 3:
+    actco = actco + 0.3 
+    
+print(actco)
