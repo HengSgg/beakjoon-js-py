@@ -7,24 +7,24 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', function (line) {
-  input.push(parseInt(line));
-}).on('close', function () {
-    let x = input[0];
-    let y = input[1];
-    var result;
+  input.push(line)
+})
+  .on('close', function () {
+  let h = parseInt(input[0].split(' ')[0]);
+  let m = parseInt(input[0].split(' ')[1]);
+  let t = parseInt(input[1])
+  let result;
 
-    if(x>0 && y>0){
-        result = 1
-    }else if(x>0 && y<0){
-        result = 4
-    }else if(x<0 && y>0){
-        result = 2
-    }else if(x<0 && y<0){
-        result = 3
-    }else{
-        result = 0
+  result = m + t
+  if(result > 60){
+    m = result % 60
+    h = h + parseInt(result / 60)
+    if(h >= 24){
+        h = h - 24
     }
-
-  console.log(result)
+    console.log(`${h} ${m}`)
+  }else{
+    console.log(`${h} ${result}`)
+  }
   process.exit();
 });
