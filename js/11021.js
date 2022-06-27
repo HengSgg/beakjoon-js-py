@@ -7,7 +7,7 @@
 // 각 테스트 케이스는 한 줄로 이루어져 있으며, 각 줄에 A와 B가 주어진다. (0 < A, B < 10)
 
 // 출력
-// 각 테스트 케이스마다 A+B를 출력한다.
+// 각 테스트 케이스마다 "Case #x: "를 출력한 다음, A+B를 출력한다. 테스트 케이스 번호는 1부터 시작한다.
 
 // 예제 입력 1 
 // 5
@@ -17,16 +17,16 @@
 // 9 8
 // 5 2
 // 예제 출력 1 
-// 2
-// 5
-// 7
-// 17
-// 7
+// Case #1: 2
+// Case #2: 5
+// Case #3: 7
+// Case #4: 17
+// Case #5: 7
 
 var fs = require('fs');
 var input = fs.readFileSync('ex.txt').toString().split('\n');
 var caseNum = parseInt(input[0]);
 
 for(let i = 1; i <= caseNum; i++){
-  console.log(parseInt(input[i].split(' ')[0]) + parseInt(input[i].split(' ')[1]));
+  console.log(`Case #${i}: ${parseInt(input[i].split(' ')[0]) + parseInt(input[i].split(' ')[1])}`)
 }
